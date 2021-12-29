@@ -7008,6 +7008,11 @@ vite-plugin-pages@^0.19.3:
     local-pkg "^0.4.0"
     yaml "^2.0.0-9"
 
+vite-plugin-radar@^0.4.1:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/vite-plugin-radar/-/vite-plugin-radar-0.4.1.tgz#73f063db638a89783060a8e1984e1c73555964a4"
+  integrity sha512-4WXkmmAtUwTvilESAWun3af1qwUEI95eYUxMDFT5J+uZyc4U7zv40PPrntgvImy2XGa/3aN7bti4lO9FeOjZdA==
+
 vite-plugin-vue-layouts@^0.5.0:
   version "0.5.0"
   resolved "https://registry.npmjs.org/vite-plugin-vue-layouts/-/vite-plugin-vue-layouts-0.5.0.tgz"
@@ -7202,11 +7207,6 @@ vue-eslint-parser@^8.0.1:
     esquery "^1.4.0"
     lodash "^4.17.21"
     semver "^7.3.5"
-
-vue-gtag@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/vue-gtag/-/vue-gtag-2.0.1.tgz#d4dc1b9cf79809c37ce844824c0f7fa97af520dd"
-  integrity sha512-aM4A58FVL0wV2ptYi+xzAjeg+pQVRyUcfBc5UkXAwQrR4t3WBhor50Izp2I+3Oo7+l+vWJ7u78DGcNzReb8S/A==
 
 vue-i18n@^9.1.9:
   version "9.1.9"

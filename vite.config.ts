@@ -1,5 +1,5 @@
 import path from 'path'
-import { defineConfig } from 'vite'
+import {defineConfig} from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Layouts from 'vite-plugin-vue-layouts'
@@ -12,6 +12,7 @@ import VueI18n from '@intlify/vite-plugin-vue-i18n'
 import Inspect from 'vite-plugin-inspect'
 import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
+import ViteRadar from 'vite-plugin-radar'
 
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
@@ -101,6 +102,15 @@ export default defineConfig({
       // change this to enable inspect for debugging
       enabled: false,
     }),
+
+    // https://github.com/stafyniaksacha/vite-plugin-radar
+    ViteRadar({
+      enableDev: true,
+      // Google Analytics tag injection
+      analytics: {
+        id: "UA-48867719-1",
+      },
+    })
   ],
 
   server: {

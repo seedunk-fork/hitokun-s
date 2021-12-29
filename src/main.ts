@@ -23,10 +23,6 @@ export const createApp = ViteSSG(
     App,
     {routes: routes},
     (ctx) => {
-        ctx.app.use(VueGtag, {
-            config: {id: "UA-48867719-1"},
-            property: {id: "UA-48867719-1"}
-        });
         // install all modules under `modules/`
         Object.values(import.meta.globEager('./modules/*.ts')).map(i => i.install?.(ctx))
     },
