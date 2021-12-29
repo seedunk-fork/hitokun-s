@@ -110,6 +110,9 @@ export default defineConfig({
       analytics: {
         id: "UA-48867719-1",
       },
+      gtm: {
+        id: "GTM-TJZMBGZ"
+      }
     })
   ],
 
