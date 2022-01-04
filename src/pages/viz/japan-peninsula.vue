@@ -141,7 +141,7 @@ export default {
     }));
   },
   async mounted() {
-    const base = import.meta.env.VITE_HOGE
+    const base = import.meta.env.VITE_BASE_URL
     const response = await fetch(base + "/data/peninsula.geojson")
     let data = await response.json();
     data.features = data.features.filter(d => d.properties.A18_007 !== "紀伊")

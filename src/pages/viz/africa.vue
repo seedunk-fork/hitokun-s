@@ -199,7 +199,7 @@ export default {
     };
   },
   async created() {
-    const base = import.meta.env.VITE_HOGE
+    const base = import.meta.env.VITE_BASE_URL
     const response = await fetch(base + "/data/africa.geo.json")
     const data = await response.json();
     this.geojson = data;

@@ -70,7 +70,7 @@ export default defineComponent({
         layers: [m_mono]
       });
 
-      const base = import.meta.env.VITE_HOGE
+      const base = import.meta.env.VITE_BASE_URL
 
       fetch(base + "/data/kyusyu4326.tif")
           .then(response => response.arrayBuffer())
