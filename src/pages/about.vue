@@ -85,6 +85,11 @@ export default {
 }
 </script>
 
+<route lang="yaml">
+meta:
+  title: Profile
+</route>
+
 <style lang="scss">
 
 @import "../assets/main.scss";

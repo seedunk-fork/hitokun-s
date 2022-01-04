@@ -51,3 +51,7 @@ export default {
 }
 </script>
 
+<route lang="yaml">
+meta:
+  title: Projects
+</route>

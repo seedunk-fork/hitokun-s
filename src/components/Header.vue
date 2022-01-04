@@ -5,7 +5,7 @@
       <span class="navbar-item">
       <router-link to="/" class="is-link navbar-item is-size-3 has-text-weight-bold has-text-primary">
         <font-awesome-icon icon="home"/>
-        Hitokun's
+        Hitokun's {{title}}
       </router-link>
       </span>
       <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" @click="isOpen = !isOpen" v-bind:class="{'is-active': isOpen}">
@@ -56,6 +56,9 @@
 
   export default {
     name: "Header",
+    props: {
+      title: String
+    },
     components: {
       FontAwesomeIcon
     },

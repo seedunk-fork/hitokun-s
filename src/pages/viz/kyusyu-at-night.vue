@@ -17,16 +17,9 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {faSpinner} from '@fortawesome/free-solid-svg-icons'
 import {defineComponent} from "vue";
 import {metaInfo} from "../../util";
+import fetch from 'cross-fetch';
 
 library.add(faSpinner)
-
-// import * as L from 'leaflet'
-// import 'leaflet-geotiff'
-// import 'leaflet-geotiff/leaflet-geotiff-plotty'
-//
-// import parse_georaster from "georaster"
-// import GeoRasterLayer from "georaster-layer-for-leaflet"
-// import {useMeta} from "vue-meta";
 
 export default defineComponent({
   created(){
@@ -65,7 +58,6 @@ export default defineComponent({
       // const url = 'https://tile.mierune.co.jp/mierune_mono/{z}/{x}/{y}.png'
       const url = 'https://api.mapbox.com/styles/v1/mapbox/light-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGl0b2t1biIsImEiOiJjaXVqYnd0NXUwMGRwMm9tc3RvcGZ1ZDZ5In0.Q4wyiiGDLH_lTi3zzFcAtA'
 
-
       const m_mono = new L.TileLayer(url, {
         attribution: "Maptiles by <a href='http://mierune.co.jp/' target='_blank'>MIERUNE</a>, under CC BY. Data by <a href='http://osm.org/copyright' target='_blank'>OpenStreetMap</a> contributors, under ODbL."
       });
@@ -78,7 +70,9 @@ export default defineComponent({
         layers: [m_mono]
       });
 
-      fetch("/data/kyusyu4326.tif")
+      const base = import.meta.env.VITE_HOGE
+
+      fetch(base + "/data/kyusyu4326.tif")
           .then(response => response.arrayBuffer())
           .then(arrayBuffer => {
             parse_georaster(arrayBuffer).then(georaster => {

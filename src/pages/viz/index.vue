@@ -3,7 +3,7 @@
       <div class="container">
         <div class="columns is-multiline">
           <div class="column is-one-quarter-desktop is-half-tablet" v-for="info in sites">
-            <a :href="info.path">
+            <a v-if="info.path.startsWith('http')" :href="info.path">
               <div class="card">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -22,6 +22,25 @@
                 </div>
               </div>
             </a>
+            <router-link v-else :to="info.path">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img :src="info.image" alt="Placeholder image">
+                  </figure>
+                </div>
+                <header class="card-header">
+                  <p class="card-header-title">
+                    {{ info.title }}
+                  </p>
+                </header>
+                <div class="card-content">
+                  <div class="content">
+                    {{ info.description }}
+                  </div>
+                </div>
+              </div>
+            </router-link>
           </div>
         </div>
       </div>
@@ -51,3 +70,7 @@ export default {
 }
 </script>
 
+<route lang="yaml">
+meta:
+  title: Visualizations
+</route>

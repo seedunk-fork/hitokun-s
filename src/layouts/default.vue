@@ -1,7 +1,7 @@
 
 <template>
   <main>
-    <Header/>
+    <Header :title="title"/>
     <router-view v-bind:class="{ 'is-desktop': !isWide, container: !isWide, 'fill-screen': fillScreen }" />
 <!--    <Footer/>-->
   </main>
@@ -21,7 +21,8 @@ export default defineComponent({
     const meta = useRouter().currentRoute.value.meta;
     return {
       isWide: meta && meta.wide,
-      fillScreen: meta && meta.fillScreen
+      fillScreen: meta && meta.fillScreen,
+      title: meta?.title || ""
     }
   },
   metaInfo() {
@@ -54,6 +55,7 @@ export default defineComponent({
       const meta = this.$router.currentRoute.value.meta;
       this.isWide = meta && meta.wide;
       this.fillScreen = meta && meta.fillScreen;
+      this.title = meta?.title || "";
     }
   }
 });

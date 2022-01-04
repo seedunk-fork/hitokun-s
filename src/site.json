@@ -1,9 +1,15 @@
 [
   {
     "path": "/viz/kyusyu-at-night",
-    "description": "Kyusyu at night （九州夜景）",
+    "description": "Kyusyu at night,九州夜景",
     "image": "https://hitokun-s.github.io/images/kyusyu-at-night.png",
     "title": "Kyusyu at night"
+  },
+  {
+    "path": "/viz/japan-peninsula",
+    "description": "Japan Peninsula,日本の半島",
+    "image": "https://hitokun-s.github.io/images/japan-peninsula.png",
+    "title": "Japan Peninsula"
   },
   {
     "path": "/viz",
