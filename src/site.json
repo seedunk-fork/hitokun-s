@@ -13,19 +13,19 @@
   },
   {
     "path": "/viz",
-    "description": null,
+    "description": "Hitokun's visualizations",
     "image": null,
     "title": null
   },
   {
     "path": "/project",
-    "description": null,
+    "description": "Hitokun's projects",
     "image": null,
     "title": null
   },
   {
     "path": "/about",
-    "description": "About",
+    "description": "Hitokun's profile",
     "image": "https://hitokun-s.github.io/images/self.jpg",
     "title": "About"
   },

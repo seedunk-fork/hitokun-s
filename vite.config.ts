@@ -14,6 +14,10 @@ import Prism from 'markdown-it-prism'
 import LinkAttributes from 'markdown-it-link-attributes'
 import ViteRadar from 'vite-plugin-radar'
 
+import { JSDOM } from "jsdom";
+import siteInfo from "./src/site.json";
+import {metaInfo2} from "./util2";
+
 const markdownWrapperClasses = 'prose prose-sm m-auto text-left'
 
 export default defineConfig({
@@ -125,11 +129,36 @@ export default defineConfig({
     },
   },
 
-  // https://github.com/antfu/vite-ssg
+  // see https://github.com/antfu/vite-ssg/blob/main/src/types.ts
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
-    dirStyle: "nested"
+    dirStyle: "nested",
+    onPageRendered: (route, indexHTML, appCtx) => {
+      const info = siteInfo.find(i => i.path === route)
+      if(!info){
+        console.log("=== info not found for route: " + route)
+        return indexHTML
+      }
+      const dom = new JSDOM(indexHTML);
+      const doc = dom.window.document;
+
+      const metas = metaInfo2(info);
+      metas.forEach(m => {
+        const keyType = m.name ? "name" : "property"
+        const key = m[keyType]
+        const found = doc.querySelector(`meta[${keyType}="${key}"]`)
+        if(found){
+          found.setAttribute("content", m.content)
+        }else{
+          const el = doc.createElement("meta");
+          el.setAttribute(keyType, key)
+          el.setAttribute("content", m.content)
+          doc.head.appendChild(el)
+        }
+      })
+      return dom.serialize();
+    }
   },
 
   optimizeDeps: {

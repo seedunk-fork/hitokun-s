@@ -4,6 +4,10 @@
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CarbonCampsite: typeof import('~icons/carbon/campsite')['default']
+    CarbonDicomOverlay: typeof import('~icons/carbon/dicom-overlay')['default']
+    CarbonPedestrian: typeof import('~icons/carbon/pedestrian')['default']
+    CarbonWarning: typeof import('~icons/carbon/warning')['default']
     Footer: typeof import('./components/Footer.vue')['default']
     Footer2: typeof import('./components/Footer2.vue')['default']
     Header: typeof import('./components/Header.vue')['default']
