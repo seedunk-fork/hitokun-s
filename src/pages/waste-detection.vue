@@ -16,6 +16,7 @@
       <button v-if="deviceIds.length > 1" class="switch-cam" @click="switchCam">
         <font-awesome-icon icon="exchange-alt"/>
       </button>
+      <p style="position:absolute;z-index:1000;">deviceIds: {{deviceIds.length}}</p>
     </div>
 <!--    <button @click="capture">cap</button>-->
   </div>
@@ -54,8 +55,6 @@ export default {
     const self = this;
 
     this.WW = this.$refs.container.clientWidth;
-
-
 
     if (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
       navigator.mediaDevices.enumerateDevices().then(devices => {
