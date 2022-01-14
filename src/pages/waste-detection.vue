@@ -108,7 +108,7 @@ export default {
         this.deviceKinds = devices.map(d => d.kind);
         const deviceIds = devices.filter(d => d.kind === "videoinput").map(d => d.deviceId);
         this.deviceIds = deviceIds;
-        this.deviceId = deviceIds[0];
+        // this.deviceId = deviceIds[0];
       })
 
       const containerAspect = this.$refs.container.clientWidth / this.$refs.container.clientHeight;
