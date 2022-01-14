@@ -12,7 +12,10 @@
           :width="WW"
           :height="HH"
       ></video>
-      <canvas :width="WW" :height="HH" style="position:absolute;z-index:999;left:0" ref="canvas"></canvas>
+      <canvas :width="WW" :height="HH" style="position:absolute;z-index:10;left:0" ref="canvas"></canvas>
+      <button v-if="deviceIds.length > 1" class="switch-cam" @click="switchCam">
+        <font-awesome-icon icon="exchange-alt"/>
+      </button>
     </div>
 <!--    <button @click="capture">cap</button>-->
   </div>
@@ -23,17 +26,24 @@
 import * as tf from '@tensorflow/tfjs';
 import {loadGraphModel} from '@tensorflow/tfjs-converter';
 import categories from "../categories.json";
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+import {faExchangeAlt} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faExchangeAlt);
 
 const categoryDic = {};
 categories.forEach(v => {
   categoryDic[v.id] = v.name
 })
-console.log(categoryDic);
 
 const base = import.meta.env.VITE_BASE_URL;
 const MODEL_URL = `${base}/model/model.json`;
 
 export default {
+  components: {
+    FontAwesomeIcon
+  },
   async created(){
     this.model = await loadGraphModel(MODEL_URL);
     this.loaded1 = true
@@ -45,15 +55,24 @@ export default {
 
     this.WW = this.$refs.container.clientWidth;
 
-    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
-      console.log("handleSuccess", stream)
-      player.srcObject = stream;
-      self.loaded2 = true
-    });
+
+
+    if (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
+      navigator.mediaDevices.enumerateDevices().then(devices => {
+        const deviceIds = devices.filter(d => d.kind === "videoinput").map(d => d.deviceId);
+        console.log("deviceIds:", deviceIds);
+        self.deviceIds = deviceIds;
+        self.deviceId = deviceIds[0];
+
+        // navigator.mediaDevices.getUserMedia({ video: {deviceId: self.deviceId} }).then(stream => {
+        //   console.log("handleSuccess", stream)
+        //   player.srcObject = stream;
+        //   self.loaded2 = true
+        // });
+      })
+    }
 
     const ctx = this.context = this.$refs.canvas.getContext('2d');
-    console.log("ctx", ctx)
-
     ctx.strokeStyle = "#FF0000";
 
   },
@@ -64,6 +83,8 @@ export default {
       loaded1: false,
       loaded2: false,
       loaded3: false,
+      deviceIds: [],
+      deviceId: null
     }
   },
   computed: {
@@ -78,6 +99,15 @@ export default {
     }
   },
   methods:{
+    switchCam(){
+      console.log("switchCam");
+      if (this.deviceIds.length < 2) {
+        return
+      }
+      const curIdx = this.deviceIds.indexOf(this.deviceId)
+      let nextIdx = (curIdx === this.deviceIds.length - 1) ? 0 : curIdx + 1
+      this.deviceId = this.deviceIds[nextIdx];
+    },
     playing(){
 
       // console.log(`cw: ${this.$refs.container.clientWidth}, ch:${this.$refs.container.clientHeight}`)
@@ -170,6 +200,13 @@ export default {
 
         setInterval(this.capture, 100);
       }
+    },
+    deviceId(val, old){
+      navigator.mediaDevices.getUserMedia({ video: {deviceId: val} }).then(stream => {
+        console.log("handleSuccess", stream);
+        this.$refs.player.srcObject = stream;
+        this.loaded2 = true
+      });
     }
   }
 }
@@ -191,6 +228,18 @@ meta:
 .my-wrapper{
   margin-left: auto;
   margin-right: auto;
+}
+
+.switch-cam {
+  background-color: #fff;
+  border-radius: 5px;
+  color: #000;
+  padding: 10px;
+  margin: 10px;
+  width: 50px;
+  position: absolute;
+  z-index: 100;
+  left: 0;
 }
 
 </style>
