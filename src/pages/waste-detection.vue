@@ -16,7 +16,7 @@
       <button v-if="deviceIds.length > 1" class="switch-cam" @click="switchCam">
         <font-awesome-icon icon="exchange-alt"/>
       </button>
-      <p style="position:absolute;z-index:1000;">deviceIds:{{deviceCnt}} {{deviceIds.length}}</p>
+      <p style="position:absolute;z-index:1000;">deviceIds:{{deviceKinds}} {{deviceIds.length}}</p>
     </div>
 <!--    <button @click="capture">cap</button>-->
   </div>
@@ -58,7 +58,7 @@ export default {
 
     if (navigator.mediaDevices && navigator.mediaDevices.enumerateDevices) {
       navigator.mediaDevices.enumerateDevices().then(devices => {
-        self.deviceCnt = devices.length;
+        self.deviceKinds = devices.map(d => d.kind);
         const deviceIds = devices.filter(d => d.kind === "videoinput").map(d => d.deviceId);
         console.log("deviceIds:", deviceIds);
         self.deviceIds = deviceIds;
@@ -85,7 +85,7 @@ export default {
       loaded3: false,
       deviceIds: [],
       deviceId: null,
-      deviceCnt: 0
+      deviceKinds: []
     }
   },
   computed: {
@@ -218,6 +218,7 @@ export default {
 meta:
   wide: true
   fillScreen: true
+  title: Waste Detection
 </route>
 
 <style lang="scss">
