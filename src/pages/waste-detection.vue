@@ -16,7 +16,6 @@
       <button v-if="deviceIds.length > 1" class="switch-cam" @click="switchCam">
         <font-awesome-icon icon="exchange-alt"/>
       </button>
-      <p style="position:absolute;z-index:1000;">deviceIds:{{deviceKinds}} {{deviceIds.length}}</p>
     </div>
 <!--    <button @click="capture">cap</button>-->
   </div>
@@ -63,12 +62,6 @@ export default {
         console.log("deviceIds:", deviceIds);
         self.deviceIds = deviceIds;
         self.deviceId = deviceIds[0];
-
-        // navigator.mediaDevices.getUserMedia({ video: {deviceId: self.deviceId} }).then(stream => {
-        //   console.log("handleSuccess", stream)
-        //   player.srcObject = stream;
-        //   self.loaded2 = true
-        // });
       })
     }
 
@@ -112,9 +105,10 @@ export default {
     playing(){
 
       navigator.mediaDevices.enumerateDevices().then(devices => {
-            this.deviceKinds = devices.map(d => d.kind);
-            const deviceIds = devices.filter(d => d.kind === "videoinput").map(d => d.deviceId);
-            this.deviceIds = deviceIds;
+        this.deviceKinds = devices.map(d => d.kind);
+        const deviceIds = devices.filter(d => d.kind === "videoinput").map(d => d.deviceId);
+        this.deviceIds = deviceIds;
+        this.deviceId = deviceIds[0];
       })
 
       const containerAspect = this.$refs.container.clientWidth / this.$refs.container.clientHeight;
