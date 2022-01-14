@@ -111,7 +111,11 @@ export default {
     },
     playing(){
 
-      // console.log(`cw: ${this.$refs.container.clientWidth}, ch:${this.$refs.container.clientHeight}`)
+      navigator.mediaDevices.enumerateDevices().then(devices => {
+            this.deviceKinds = devices.map(d => d.kind);
+            const deviceIds = devices.filter(d => d.kind === "videoinput").map(d => d.deviceId);
+            this.deviceIds = deviceIds;
+      })
 
       const containerAspect = this.$refs.container.clientWidth / this.$refs.container.clientHeight;
       const videoAspect = this.$refs.player.videoWidth / this.$refs.player.videoHeight;
