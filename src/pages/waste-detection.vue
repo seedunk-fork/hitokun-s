@@ -37,6 +37,7 @@ categories.forEach(v => {
   categoryDic[v.id] = v.name
 })
 
+const colors = ['#788ef5', '#7c95f4', '#7f9cf3', '#83a3f2', '#88a9f0', '#8cb0ee', '#90b6ec', '#94bce9', '#98c1e6', '#9dc6e3', '#a1ccdf', '#a5d0db', '#aad5d6', '#aed9d1', '#b3decc', '#b7e2c6', '#bbe5c1', '#c0e9ba', '#c4ecb3', '#c8efac', '#cdf1a5', '#d1f49d', '#d5f694', '#d9f88b', '#ddfa81', '#e1fb77', '#e5fd6c', '#e8fe5f', '#ecfe52', '#efff41', '#d2f44a', '#d8e94d', '#ddde50', '#e2d452', '#e6cb54', '#e9c157', '#ecb859', '#eeaf5a', '#f0a75c', '#f29f5e', '#f39760', '#f59061', '#f68963', '#f68365', '#f77d66', '#f77768', '#f77269', '#f86d6b', '#f8696d', '#f7656f', '#f76271', '#f76072', '#f75f74', '#f65e77', '#f55e79', '#f55e7b', '#f4607d', '#f36280', '#f26582', '#f16885']
 const base = import.meta.env.VITE_BASE_URL;
 const MODEL_URL = `${base}/model/model.json`;
 
@@ -168,12 +169,14 @@ export default {
         const w = this.WW * (xmax - xmin);
         const h = this.HH * (ymax - ymin);
 
+        const color = colors[idx]
+
         // draw bounding box
-        ctx.strokeStyle = "tomato";
+        ctx.strokeStyle = color;
         ctx.lineWidth = 2;
         ctx.strokeRect(x, y, w, h);
         // draw label bg
-        ctx.fillStyle = "tomato";
+        ctx.fillStyle = color;
         // const strToShow = `${prediction.class}: ${prediction.score}`
         const strToShow = `${categoryDic[detection_classes[idx]]}`
         const textW = ctx.measureText(strToShow).width;
