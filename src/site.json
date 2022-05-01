@@ -24,6 +24,12 @@
     "title": null
   },
   {
+    "path": "/project/waste-detection",
+    "description": "live camera detection of wastes(ex. glass bottle, plastic bag)",
+    "image": "https://hitokun-s.github.io/images/waste-detection.png",
+    "title": "waste detection"
+  },
+  {
     "path": "/about",
     "description": "Hitokun's profile",
     "image": "https://hitokun-s.github.io/images/self.jpg",
@@ -49,8 +55,8 @@
   },
   {
     "path": "https://hitokun-s.github.io/old/project/historip.html",
-    "description": "A Social Time-Machine",
+    "description": "A Social Time-Machine (currently for 13C)",
     "image": "https://hitokun-s.github.io/old/images/historip.png",
-    "title": "Historip - A Social TimeMachine -"
+    "title": "Historip"
   }
 ]

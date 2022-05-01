@@ -25,7 +25,7 @@
 
 import * as tf from '@tensorflow/tfjs';
 import {loadGraphModel} from '@tensorflow/tfjs-converter';
-import categories from "../categories.json";
+import categories from "../../categories.json";
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {faExchangeAlt} from '@fortawesome/free-solid-svg-icons'
