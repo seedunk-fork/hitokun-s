@@ -1,6 +1,6 @@
 # Working as
 
-- Machine Learning engineer
+- Data Science / Machine Learning engineer
 - Full-Stack Web Service engineer
 
 # Qualifications
@@ -15,7 +15,7 @@
 # Languages
 
 - to Human: Japanese, English, Spanish(a bit)
-- to Computer: **Java/Groovy/Kotlin, Python, JavaScript**
+- to Computer: **Java/Groovy/Kotlin, Python, JavaScript/TypeScript**
 
 # Career
 
@@ -27,7 +27,7 @@
 
 - 1st prize in Sabae Web Application Contest 2013
 - 1st prize in OpenData Contest 2014-2015 Fukuoka
-- 2nd prize in [PhotoHackDay(Berlin)](https://www.eyeem.com/blog/2015/12/the-winning-hacks-from-photo-hack-day-4-berlin/) 2015  
+- 2nd prize in [PhotoHackDay(Berlin)](https://www.eyeem.com/blog/the-winning-hacks-from-photo-hack-day-4-berlin) 2015  
 - 2nd prize in Startup Weekend Tokyo @Hanoi 2018 
   
 # Articles
