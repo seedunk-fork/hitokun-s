@@ -33,6 +33,9 @@
         <li v-bind:class="{ 'is-active': path == '/about' }">
           <router-link to="/about">About</router-link>
         </li>
+        <li v-bind:class="{ 'is-active': path == '/art' }">
+          <router-link to="/art">Art</router-link>
+        </li>
         <li v-bind:class="{ 'is-active': path == '/viz' }">
           <router-link to="/viz">Viz</router-link>
         </li>

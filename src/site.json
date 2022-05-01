@@ -58,5 +58,30 @@
     "description": "A Social Time-Machine (currently for 13C)",
     "image": "https://hitokun-s.github.io/old/images/historip.png",
     "title": "Historip"
+  },
+  {
+    "path": "https://hitokun-s.github.io/old/demo/secret-of-1-71.html#@art",
+    "description": "painting by God of Math",
+    "image": "https://hitokun-s.github.io/old/images/secret_of_1_71.png",
+    "title": "Secret of 1/71"
+  },
+  {
+    "path": "https://hitokun-s.github.io/old/demo/moya-moya.html#@art",
+    "description": "boid algorithm in color",
+    "image": "https://hitokun-s.github.io/old/images/moya_moya.png",
+    "title": "Moya Lisa"
+  },
+  {
+    "path": "https://hitokun-s.github.io/old/demo/liquid-in-circle-graph.html#@art",
+    "description": "ratio is correct",
+    "image": "https://hitokun-s.github.io/old/demo/img/liquid-in-circle-graph.png",
+    "title": "Liquid Graph"
+  },
+  {
+    "path": "https://hitokun-s.github.io/old/demo/butterfly.html#@art",
+    "description": "using CSS only",
+    "image": "https://hitokun-s.github.io/old/images/butterfly.png",
+    "title": "Butterfly"
   }
+
 ]
