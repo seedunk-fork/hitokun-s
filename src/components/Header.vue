@@ -42,7 +42,6 @@
         <li v-bind:class="{ 'is-active': path == '/project' }">
           <router-link to="/project">Project</router-link>
         </li>
-        <li><a href="https://hitokun-s.github.io/old">Old</a></li>
       </ul>
     </div>
     </div>

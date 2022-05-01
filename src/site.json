@@ -82,6 +82,12 @@
     "description": "using CSS only",
     "image": "https://hitokun-s.github.io/old/images/butterfly.png",
     "title": "Butterfly"
+  },
+  {
+    "path": "https://hitokun-s.github.io/old/watch/moving-blocks.html#@art",
+    "description": "using three.js",
+    "image": "https://hitokun-s.github.io/old/images/moving_blocks.png",
+    "title": "Block Watch"
   }
 
 ]
