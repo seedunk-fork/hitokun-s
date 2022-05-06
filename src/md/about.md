@@ -1,7 +1,7 @@
 # Working as
 
 - Data Science / Machine Learning engineer
-- Full-Stack Web Service engineer
+- Full-Stack Web Service engineer & architect
 
 # Qualifications
 
@@ -12,16 +12,29 @@
 - 英検2級
 - 数検準1級
 
-# Languages
+# Languages & Frameworks
 
-- to Human: Japanese, English, Spanish(a bit)
-- to Computer: **Java/Groovy/Kotlin, Python, JavaScript/TypeScript**
+| languages | usage                     | frameworks                                                          |
+|---|---------------------------|---------------------------------------------------------------------|
+| Python | DS, ML, web backend       | tensorflow, keras <br>flask, django <br>pandas, scipy, scikit-learn |
+| Java / Groovy / Kotlin | web backend, batch        | spring-boot, grails                                                 |                                                      |
+| JavaScript / TypeScript | web backend, web frontend | express, vue/nuxt, react/next                                       |
 
-# Career
+# Career & clients
 
+Company career
+
+- [Retail AI](https://www.retail-ai.jp/en)
 - [Works Applications](http://www.worksap.com/)
 - [NABLAS inc.](https://nablas.com/) as co-founder
-- freelance(currently)
+
+Clients as freelance
+
+- [Tokyo University](http://www.u-tokyo.ac.jp/en/index.html)
+- [NABLAS inc.](https://nablas.com/)
+- [Fujisan Magazine Service](http://www.fujisan.co.jp/)
+- [Kurashiru](https://www.kurashiru.com/)
+- several startups in Japan
 
 # Prizes
 
@@ -34,11 +47,6 @@
 
 - [レシピテキストとレシピ動画の教師なしマッピング(信学技報, vol.119, no.252, HCS2019-44, pp.23-28)](https://www.ieice.org/ken/paper/20191026c1Rc/)
 
-# Clients
+# Personal Service
 
-- [Tokyo University](http://www.u-tokyo.ac.jp/en/index.html)
-- [NABLAS inc.](https://nablas.com/)
-- [Fujisan Magazine Service](http://www.fujisan.co.jp/)
-- [Kurashiru](https://www.kurashiru.com/)
-- several startups in Japan
-
+- [大隅読書倶楽部](https://osm-dks-clb.web.app/)
