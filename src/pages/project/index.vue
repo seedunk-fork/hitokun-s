@@ -37,7 +37,7 @@ export default {
   name: 'List',
   data: () => {
     return {
-      sites: sites.filter(d => d.path.includes("/project/"))
+      sites: sites.filter(d => d.path.includes("/project/") || d.tag === "project")
     }
   },
   created() {

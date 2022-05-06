@@ -30,6 +30,20 @@
     "title": "waste detection"
   },
   {
+    "path": "https://hitokun-s.github.io/old/movie/abc-song.html",
+    "description": "using DCGAN",
+    "image": "https://hitokun-s.github.io/old/movie/img/epoch180.png",
+    "title": "ABC song by deep learning",
+    "tag": "project"
+  },
+  {
+    "path": "https://www.facebook.com/hitoshi.wada.5/videos/vb.100002358474209/616886305066646/?type=2&amp;theater",
+    "description": "convert tomato to instrument",
+    "image": "https://hitokun-s.github.io/old/images/tomatos.png",
+    "title": "How to play tomatos",
+    "tag": "project"
+  },
+  {
     "path": "/about",
     "description": "Hitokun's profile",
     "image": "https://hitokun-s.github.io/images/self.jpg",
